@@ -3,6 +3,7 @@ import BonuModelsSection from "@/components/about/components/bonu-models-section
 import HeroSection from "@/components/about/components/hero-section";
 import UseCasesSection from "@/components/about/components/use-cases-section";
 import UzbekistanDataSection from "@/components/about/components/uzbekistan-data-section";
+import Footer from "@/components/footer";
 
 export default function About() {
   return (
@@ -12,6 +13,7 @@ export default function About() {
       <BonuModelsSection />
       <UseCasesSection />
       <UzbekistanDataSection />
+      <Footer />
     </>
   );
 }
