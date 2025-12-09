@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import * as React from "react";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const transitionVariants = {
   container: {
@@ -85,44 +85,44 @@ export default function BonuModelsSection() {
           >
             <ModelCard
               title="Bonu-Model-Coding"
-              emoji="💻"
               description="Python, JavaScript, SQL, C++ va 50+ dasturlash tillarini biladi. Arxitekturani tushunadi, kodni optimallashtiradi, xatolarni topadi."
               features={["Python", "JavaScript", "SQL", "DevOps"]}
+              image="/rocket.png"
             />
 
             <ModelCard
               title="Bonu-Model-Ultra"
-              emoji="💡"
               description="Murakkab vazifalar uchun flagman model. Ko'p bosqichli mulohazalar, hujjatlarni tahlil qilish, strategik rejalashtirishni bajaradi."
               features={["Reasoning", "Analysis", "Strategy"]}
+              image="/ultra.png"
             />
 
             <ModelCard
               title="Bonu-Model-History"
-              emoji="🗂️"
               description="O'zbekiston va Markaziy Osiyoning tarixiy ma'lumotlari asosida o'qitilgan. Temuriylar, Buyuk Ipak yo'li, zamonaviy tarix kabi yo'nalishlarni qamrab oladi."
               features={["O'zbekiston tarixi", "Madaniyat", "An'analar"]}
+              image="/history.png"
             />
 
             <ModelCard
               title="Bonu-Model-Legal"
-              emoji="⚖️"
               description="O'zbekiston qonunchiligi bo'yicha yuridik ekspertiza. Fuqarolik, soliq, mehnat huquqi. Shartnomalarni tahlil qilish."
               features={["Qonunlar", "Shartnomalar", "Konsultatsiyalar"]}
+              image="/legal.png"
             />
 
             <ModelCard
               title="Bonu-Model-Business"
-              emoji="💹"
               description="Biznes tahlili va prognoz qilish. Moliyaviy modellash, bozorni tahlil qilish, o'sish strategiyasi."
               features={["Analitika", "Prognozlar", "ROI"]}
+              image="/business.png"
             />
 
             <ModelCard
               title="Bonu-Model-Security"
-              emoji="🕵️"
               description="Bank darajasidagi kiberxavfsizlik. Moliyaviy tashkilotlarda AntiFraud, SIEM, DLP, PAM tizimlarini almashtirishga tayyor."
               features={["AntiFraud", "SIEM", "DLP", "PAM"]}
+              image="/shield.png"
             />
           </AnimatedGroup>
         </AnimatedGroup>
@@ -133,21 +133,26 @@ export default function BonuModelsSection() {
 
 const ModelCard = ({
   title,
-  emoji,
   description,
   features,
+  image,
   link = "/login",
 }: {
   title: string;
-  emoji: string;
   description: string;
   features: string[];
   link?: string;
+  image?: string;
 }) => {
   return (
     <Card className="p-6 h-full">
       <div className="relative h-full flex flex-col">
-        <div className="text-4xl">{emoji}</div>
+        <Image
+          src={image ?? "/default.png"}
+          width={64}
+          height={64}
+          alt="Model icon"
+        />
 
         <div className="space-y-2 py-6 grow">
           <h3 className="text-lg font-semibold">{title}</h3>

@@ -1,4 +1,3 @@
-import { LogoIcon } from "@/components/logo";
 import Link from "next/link";
 
 const links = [
@@ -32,10 +31,6 @@ export default function Footer() {
   return (
     <footer className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <Link href="/" aria-label="go home" className="mx-auto block size-fit">
-          <LogoIcon />
-        </Link>
-
         <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
           {links.map((link, index) => (
             <Link
